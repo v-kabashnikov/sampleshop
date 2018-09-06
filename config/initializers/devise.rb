@@ -1,1 +1,1 @@
-Devise.secret_key = ENV.fetch("DEVISE_SECRET")
+Devise.secret_key = ENV['DEVISE_SECRET_KEY']
