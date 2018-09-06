@@ -5,8 +5,10 @@ ruby '2.5.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+group :production do
+  # Use pg as the database for Active Record
+  gem 'pg'
+end
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -37,6 +39,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
+  # Use sqlite3 as the database for Active Record
+  gem 'sqlite3'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
@@ -68,3 +72,4 @@ gem 'spree_i18n', github: 'spree/spree_i18n'
 gem 'spree_editor', github: 'spree-contrib/spree_editor'
 gem 'vinsol_spree_themes', github: 'vinsol-spree-contrib/spree_themes', branch: 'master'
 gem 'spree_analytics_trackers', github: 'spree-contrib/spree_analytics_trackers'
+gem 'aws-sdk-s3'
